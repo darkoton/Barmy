@@ -15,9 +15,9 @@ import { html } from './gulp/tasks/html.js';
 import { scss } from './gulp/tasks/scss.js';
 import { js } from './gulp/tasks/js.js';
 import { images } from './gulp/tasks/images.js';
+import { otfToTtf, ttfToWoff, iconfonts } from "./gulp/tasks/fonts.js";
 import { server } from './gulp/tasks/server.js';
 import { minHTML, minCSS, minJS, minImg } from './gulp/tasks/minify.js';
-import { otfToTtf, ttfToWoff } from "./gulp/tasks/fonts.js";
 
 function watcher() {
   gulp.watch(`${path.srcFolder}/assets/`, copy);
@@ -27,9 +27,9 @@ function watcher() {
   gulp.watch(`${path.srcFolder}/img/**/*.{png,jpeg,jpg,gif,webp,svg}`, images);
 }
 
-const fonts = gulp.series(ttfToWoff);
+const fonts = gulp.series(otfToTtf, ttfToWoff, iconfonts);
 
-const mainTasks = gulp.parallel(fonts, copy, html, scss, js, images);
+const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 

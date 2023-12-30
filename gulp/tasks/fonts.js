@@ -1,4 +1,5 @@
 import fonter from "gulp-fonter";
+import webHtmlNosvg from "gulp-webp-html-nosvg";
 import ttf2woff2 from "gulp-ttf2woff2";
 
 export const otfToTtf = () => {
@@ -35,4 +36,15 @@ export const ttfToWoff = () => {
     .pipe(ttf2woff2())
     // Выгружаем в папку с результатом
     .pipe(app.gulp.dest(`${app.path.buildFolder}/fonts`));
+}
+
+
+
+export const iconfonts = () => {
+  return app.gulp.src(`${app.path.srcFolder}/iconfonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`)
+    .pipe(app.plugins.plumber(app.plugins.notify.onError({
+      title: "ICONFONTS",
+      message: "Error: <%= error.message %>"
+    })))
+    .pipe(app.gulp.dest(`${app.path.buildFolder}/iconfonts/`))
 }

@@ -1,3 +1,4 @@
+import webHtmlNosvg from "gulp-webp-html-nosvg";
 import htmlmin from "gulp-htmlmin";
 import cssmin from "gulp-cssmin";
 import jsmin from "gulp-jsmin";
@@ -5,6 +6,7 @@ import imagemin from "gulp-imagemin";
 
 export const minHTML = () => {
   return app.gulp.src(`${app.path.buildFolder}/*.html`)
+    .pipe(webHtmlNosvg())
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(app.gulp.dest(`${app.path.buildFolder}/`))
 }
@@ -32,3 +34,4 @@ export const minImg = () => {
     }))
     .pipe(app.gulp.dest(`${app.path.buildFolder}/img/`))
 }
+
