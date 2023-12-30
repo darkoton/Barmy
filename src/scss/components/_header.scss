@@ -13,7 +13,10 @@
     height: 100%;
     display: none;
     z-index: -1;
-    img {
+
+    span {
+      height: 0;
+      overflow: hidden;
       width: 50%;
       object-fit: fill;
       position: absolute;
@@ -21,7 +24,6 @@
         bottom 0.5s ease 0s,
         top 0.5s ease 0s,
         height 1s ease 0s;
-      height: 0;
 
       &:nth-child(odd) {
         top: -100%;
@@ -48,16 +50,13 @@
       }
     }
 
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
     &.active {
-      img {
-        // &.diagonal-1 {
-        //   top: -50%;
-        //   width: 100%;
-        // }
-        // &.diagonal-2 {
-        //   bottom: -50%;
-        //   width: 100%;
-        // }
+      span {
         height: 100%;
         &:nth-child(1) {
           top: 0;
@@ -78,6 +77,35 @@
           bottom: 0;
         }
       }
+      // img {
+      //   // &.diagonal-1 {
+      //   //   top: -50%;
+      //   //   width: 100%;
+      //   // }
+      //   // &.diagonal-2 {
+      //   //   bottom: -50%;
+      //   //   width: 100%;
+      //   // }
+      //   height: 100%;
+      //   &:nth-child(1) {
+      //     top: 0;
+      //   }
+      //   &:nth-child(2) {
+      //     bottom: 0;
+      //   }
+      //   &:nth-child(3) {
+      //     top: 0;
+      //   }
+      //   &.diagonal {
+      //     height: 75%;
+      //   }
+      //   &.diagonal-1 {
+      //     top: -25%;
+      //   }
+      //   &.diagonal-2 {
+      //     bottom: 0;
+      //   }
+      // }
     }
   }
 
