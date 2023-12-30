@@ -1,0 +1,49 @@
+.about {
+  background: url(../img/about-bg.webp) 0 0/70% 100% no-repeat;
+
+  &__body {
+    @include adaptiv-value(padding-top, 70, 20, 1);
+    @include adaptiv-value(padding-bottom, 240, 60, 1);
+    display: flex;
+    align-items: center;
+    @include adaptiv-value(column-gap, 150, 50, 1);
+  }
+  &__left,
+  &__right,
+  &__img {
+    width: 100%;
+  }
+
+  &__title {
+    @include adaptiv-value(font-size, 24, 20, 1);
+    @include adaptiv-value(margin-bottom, 30, 15, 1);
+    color: #9999ff;
+  }
+  &__title-big {
+    @include adaptiv-value(font-size, 60, 25, 1);
+    color: #fff;
+    @include adaptiv-value(margin-bottom, 60, 20, 1);
+  }
+  &__text {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    @include adaptiv-value(font-size, 16, 13, 1);
+    @include adaptiv-value(line-height, 34, 23, 1);
+  }
+
+  @media (max-width: 900px) {
+    &__body {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 30px;
+    }
+    &__left,
+    &__right {
+      width: 75%;
+    }
+    &__img {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+@@include("components/head.html", { "title": "Barmy" })
+
+<body>
+  <div class="wrapper">
+    <div class="content">
+      <!-- @@include("components/header.html") -->
+      <main class="page">
+        @@include("components/main.html")
+        @@include("components/about.html")
+        @@include("components/gallery.html")
+        @@include("components/join.html")
+
+      </main>
+    </div>
+    <!-- @@include("components/footer.html") -->
+  </div>
+  <script src="./js/wow.min.js"></script>
+  <script>
+    new WOW({
+      animateClass: '_animate',
+      offset: 0
+    }).init();
+  </script>
+  <script src="./js/script.js"></script>
+  <script src="./js/parallax_text.js"></script>
+
+</body>
+
+</html>
