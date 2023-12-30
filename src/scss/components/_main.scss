@@ -65,6 +65,7 @@
     -webkit-text-fill-color: transparent;
     transition: background-position 0.1s ease 0s;
     padding: 0 10px;
+    background-attachment: fixed;
   }
 
   &__title {
