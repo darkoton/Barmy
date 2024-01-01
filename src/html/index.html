@@ -3,6 +3,23 @@
 @@include("components/head.html", { "title": "Barmy" })
 
 <body>
+  <div class="preloader">
+
+    <div class="loader">
+      <span>
+        <img src="./img/preloader/down.svg" alt="">
+      </span>
+      <span>
+        <img src="./img/preloader/up.svg" alt="">
+      </span>
+      <span>
+        <img src="./img/preloader/down.svg" alt="">
+      </span>
+    </div>
+
+    <div class="percent"><span class="percent-value">0</span> %</div>
+
+  </div>
   <div class="wrapper">
     <div class="content">
       <!-- @@include("components/header.html") -->
@@ -17,12 +34,6 @@
     <!-- @@include("components/footer.html") -->
   </div>
   <script src="./js/wow.min.js"></script>
-  <script>
-    new WOW({
-      animateClass: '_animate',
-      offset: 0
-    }).init();
-  </script>
   <script src="./js/script.js"></script>
 
 </body>

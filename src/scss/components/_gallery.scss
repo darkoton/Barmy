@@ -4,6 +4,19 @@
   background-position: center;
   transition: background 0.3s ease 0s;
 
+  &.gallery-1 {
+    background-image: url("../img/slide1.jpg");
+  }
+  &.gallery-2 {
+    background-image: url("../img/slide2.jpg");
+  }
+  &.gallery-3 {
+    background-image: url("../img/slide3.jpg");
+  }
+  &.gallery-4 {
+    background-image: url("../img/slide4.jpg");
+  }
+
   &__wrapper {
     background-color: rgba(0, 0, 0, 0.45);
   }

@@ -5,7 +5,7 @@
     content: "";
     position: absolute;
     width: 100%;
-    background: url("../img/fade.webp") 0 0 / cover no-repeat;
+    background: url("../img/fade.png") 0 0 / cover no-repeat;
     bottom: -10px;
     left: 0;
     height: 100%;
@@ -55,7 +55,8 @@
   }
   &__parallax {
     text-align: center;
-    background: url("../img/main-bg.webp") 0 0 / 100vw 100vw;
+    background-image: url("../img/main-bg.jpg");
+    background-size: 100vw 100vw;
     background-repeat: no-repeat;
     background-position: 0 0;
     -webkit-font-smoothing: antialiased;

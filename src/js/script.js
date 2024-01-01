@@ -1,6 +1,12 @@
 //< " CONNECTING JS COMPONENTS " >=============================================================================================================>//
 
-// import isDevice from './modules/device.js';
+import isWebp from "./modules/webp.js";
+
+import isDevice from './modules/device.js';
+
+import "./modules/preloader.js"  // PRELOADER
+
+// import "./modules/spoiler.js"  // SPOILERS
 
 // import "./modules/spoiler.js"  // SPOILERS
 
@@ -18,32 +24,13 @@
 
 
 //< " СКРИПТЫ " >=============================================================================================================>//
-
-function isDevice() {
-  let isMobile = {
-    Android: function () { return navigator.userAgent.match(/Android/i); },
-    BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); },
-    iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); },
-    Opera: function () { return navigator.userAgent.match(/Opera Mini/i); },
-    Windows: function () { return navigator.userAgent.match(/IEMobile/i); },
-    any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); }
-  };
-
-  if (isMobile.any()) {
-    document.body.classList.add("_touch");
-  } else {
-    document.body.classList.add("_pc");
-  }
-}
-
+isWebp()
 isDevice()
 
 const mySlider = document.querySelector('.gallery');
 const slides = mySlider.querySelectorAll('.gallery__slide');
 
-let src = slides[slides.length - 1].querySelector('img').src;
-slides[slides.length - 1].classList.add('select');
-mySlider.style.backgroundImage = `url(${src})`;
+
 
 slides.forEach(slide => {
   slide.onclick = event => {
@@ -52,15 +39,16 @@ slides.forEach(slide => {
         el.classList.remove('select');
       }
     });
-    if (event.target.tagName == 'IMG') {
-      src = event.target.src;
-      event.target.offsetParent.classList.add('select');
-    } else {
-      src = event.target.querySelector('img').src;
-      event.target.classList.add('select');
+    event.target.classList.add('select');
+
+
+    for (let i = 1; i <= slides.length; i++) {
+      if (i != event.target.dataset.slide) {
+        mySlider.classList.remove('gallery-' + i)
+      }
     }
 
-    mySlider.style.backgroundImage = `url(${src})`;
+    mySlider.classList.add('gallery-' + event.target.dataset.slide)
   };
 });
 
@@ -83,3 +71,7 @@ document.querySelector('.header__nav').querySelectorAll("a").forEach(el => {
   }
 })
 
+new WOW({
+  animateClass: '_animate',
+  offset: 0
+}).init();

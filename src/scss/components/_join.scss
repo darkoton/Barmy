@@ -5,7 +5,7 @@
     content: "";
     width: 100%;
     height: 100%;
-    background: url("../img/join-bg.webp") 0 0 / cover no-repeat;
+    background: url("../img/join-bg.jpg") 0 0 / cover no-repeat;
     opacity: 0.25;
     position: absolute;
     left: 0;
@@ -24,7 +24,7 @@
     @include adaptiv-value(line-height, 80, 60, 1);
     @include adaptiv-value(margin-bottom, 50, 25, 1);
 
-    background: url("../img/join-title.webp");
+    background-image: url("../img/join-title.jpg");
     background-repeat: repeat-x;
     background-position: 49% 60%;
     color: transparent;
@@ -77,7 +77,7 @@
     @include adaptiv-value(padding-top, 235, 100, 1);
     @include adaptiv-value(padding-bottom, 100, 50, 1);
     text-align: center;
-    background: url("../img/rights.webp") 0 0 / cover no-repeat;
+    background: url("../img/rights.png") 0 0 / cover no-repeat;
     width: 100%;
     color: #333333;
   }
